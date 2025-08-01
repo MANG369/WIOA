@@ -70,11 +70,14 @@
  /* Estilos básicos para la galería de NFTs (puedes expandir esto) */
  .nft-item {
  display: inline-block;
+ width: 180px; /* Ancho fijo para mejor alineación */
  margin: 10px;
  border: 1px solid #333;
- padding: 10px;
+ padding: 15px;
  background-color: #222;
  border-radius: 5px;
+ vertical-align: top; /* Alinea los items desde la parte superior */
+ text-align: center;
  }
 
 
@@ -82,8 +85,36 @@
  max-width: 150px;
  height: auto;
  display: block;
- margin-bottom: 5px;
+ margin-bottom: 15px;
+ margin-left: auto;
+ margin-right: auto;
  }
+ 
+ .nft-item p {
+    font-size: 0.9em;
+    height: 40px; /* Altura fija para el texto */
+ }
+
+
+ /* Estilos para el nuevo botón */
+ .view-button {
+    background-color: #4ca1af; /* Color del degradado del banner */
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    display: inline-block;
+    transition: background-color 0.3s; /* Transición suave para el hover */
+ }
+
+ .view-button:hover {
+    background-color: #2c3e50; /* Color oscuro del degradado para el hover */
+ }
+
  </style>
 </head>
 <body>
@@ -101,21 +132,33 @@
 
  <div class="nft-gallery">
  <h2 class="gallery-title">Explora la Galería Exclusiva de NFTs</h2>
+ 
  <div class="nft-item">
  <img src="placeholder-nft.png" alt="NFT 1">
- <p>NFT TON-MAN</p>
+ <p>Coleccionable #1</p>
+ <a href="https://tonscan.com/nft/EQB8BwZiWtgetBihfmEYfomc2iRvOHbXUcLPh461gF9I_U8f" target="_blank" rel="noopener noreferrer" class="view-button">
+ Ver en Explorador
+ </a>
  </div>
+ 
  <div class="nft-item">
  <img src="placeholder-nft.png" alt="NFT 2">
- <p>NFT METATRON-MAN</p>
+ <p>Coleccionable #2</p>
+ <a href="https://tonscan.com/nft/EQBALaeVmVAQsATVL9GvCD9lXnKBAELySR9_Bgv9rOqwatff" target="_blank" rel="noopener noreferrer" class="view-button">
+ Ver en Explorador
+ </a>
  </div>
+ 
  <div class="nft-item">
  <img src="placeholder-nft.png" alt="NFT 3">
- <p>NFT METATRON-YHWH</p>
+ <p>Coleccionable #3</p>
+ <a href="https://tonscan.com/nft/EQCVmMhfs5W5pE5EPJyPWQrWYjWM1qALAmAFExZkB21z_e_F" target="_blank" rel="noopener noreferrer" class="view-button">
+ Ver en Explorador
+ </a>
  </div>
- </div>
+
+</div>
 
 
 </body>
-
 </html>
