@@ -1,0 +1,111 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+  - nombre: Configurar el SDK de .NET Core
+  usos: acciones/setup-dotnet@v3.4.2
+  con:
+    Versiones opcionales del SDK. Si no se proporciona, se instalará la versión global.json cuando esté disponible. Ejemplos: 2.2.104, 3.1, 3.1.x, 3.x, 6.0.2xx
+    dotnet-version: # opcional
+    Calidad opcional de la compilación. Los valores posibles son: diario, firmado, validado, vista previa y ga.
+    dotnet-quality: # opcional
+    # Ubicación opcional de global.json, si su global.json no se encuentra en la raíz del repositorio.
+    archivo json global: # opcional
+    # Fuente de paquete opcional para configurar la autenticación. Consultará cualquier archivo NuGet.config existente en la raíz del repositorio y proporcionará un archivo NuGet.config temporal utilizando la variable de entorno NUGET_AUTH_TOKEN como ClearTextPassword.
+    URL de origen: # opcional
+    # PROPIETARIO opcional para usar paquetes de organizaciones/usuarios del Registro de Paquetes de GitHub distintos del propietario del repositorio actual. Solo se usa si también se proporciona una URL de GPR en source-url.
+    propietario: # opcional
+    # Ubicación opcional de NuGet.config, si su NuGet.config no se encuentra en la raíz del repositorio.
+    archivo de configuración: # opcional
+    # Entrada opcional para habilitar el almacenamiento en caché de la carpeta de paquetes globales de NuGet
+    caché: # opcional
+    # Se utiliza para especificar la ruta a un archivo d    - nombre: Caché
+  usos: acciones/cache@v4.2.3
+  con:
+    # Una lista de archivos, directorios y patrones comodín para almacenar en caché y restaurar
+    camino:
+    # Una clave explícita para restaurar y guardar el caché
+    llave:
+    # Una cadena multilínea ordenada que enumera las claves con prefijo coincidente, que se utilizan para restaurar la caché obsoleta si no se produce un acierto de caché para la clave. Nota: `cache-hit` devuelve falso en este caso.
+    restaurar-claves: # opcional
+    # El tamaño del fragmento utilizado para dividir archivos grandes durante la carga, en bytes
+    tamaño del fragmento de carga: # opcional
+    # Un valor booleano opcional, cuando está habilitado, permite que los ejecutores de Windows guarden o restauren cachés que se pueden restaurar o guardar respectivamente en otras plataformas
+    enableCrossOsArchive: # opcional, el valor predeterminado es falso
+    # El flujo de trabajo falla si no se encuentra la entrada de caché
+    fail-on-cache-miss: # opcional, el valor predeterminado es falso
+    # Verifica si existe una entrada de caché para las entradas dadas (clave, claves de restauración) sin descargar el caché
+    solo búsqueda: # opcional, el valor predeterminado es falso
+    # Ejecute el paso posterior para guardar el caché incluso si falla otro paso anterior
+    guardar siempre: # opcional, el valor predeterminado es falso
+          e dependencia: packages.lock.json. Admite comodines o una lista de nombres de archivo para almacenar en caché varias dependencias.
+    ruta de dependencia de caché: # opcional
+
+         - nombre: Cargar un artefacto de compilación
+  usos: acciones/upload-artifact@v4.6.2
+  con:
+    # Nombre del artefacto
+    nombre: # opcional, el valor predeterminado es artefacto
+    # Un archivo, directorio o patrón comodín que describe qué cargar
+    camino:
+    # El comportamiento deseado si no se encuentran archivos utilizando la ruta proporcionada.
+Opciones disponibles:
+  advertir: emite una advertencia pero no hace que falle la acción
+  error: Falla la acción con un mensaje de error
+  ignorar: no muestra ninguna advertencia o error, la acción no falla
+
+    if-no-files-found: # opcional, el valor predeterminado es advertir
+    # Duración después de la cual el artefacto expirará en días. 0 significa usar la retención predeterminada.
+Mínimo 1 día. Máximo 90 días, a menos que se modifique desde la página de configuración del repositorio.
+
+    días de retención: # opcional
+    El nivel de compresión de Zlib que se aplicará al archivo de artefactos. El valor puede variar de 0 a 9: - 0: Sin compresión - 1: Máxima velocidad - 6: Compresión predeterminada (igual que GNU Gzip) - 9: Máxima compresión. Los niveles más altos ofrecen una mejor compresión, pero tardan más en completarse. Para archivos grandes que no se comprimen fácilmente, se recomienda un valor de 0 para una carga mucho más rápida.
+
+    nivel de compresión: # opcional, el valor predeterminado es 6
+    # Si es verdadero, se eliminará un artefacto con el mismo nombre antes de cargar uno nuevo. Si es falso, la acción fallará si ya existe un artefacto con el nombre especificado. No falla si el artefacto no existe.
+
+    sobrescribir: # opcional, el valor predeterminado es falso
+    # Si es verdadero, se incluirán los archivos ocultos en el artefacto. Si es falso, se excluirán.
+
+    include-hidden-files: # opcional, el valor predeterminado es falso
+          
+          
