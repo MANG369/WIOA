@@ -1,164 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>IOA - Galería Exclusiva NFT MANG369</title>
- <style>
- body {
- font-family: sans-serif;
- margin: 0;
- background-color: #121212; /* Fondo oscuro similar al banner */
- color: #ffffff; /* Texto blanco */
- }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOA - Galería Exclusiva NFT MANG369</title>
+    <style>
+        /* --- Estilos Generales y del Cuerpo --- */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
 
+        /* --- Banner Superior --- */
+        .banner-container {
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: #ffffff;
+            padding: 20px;
+            height: 119px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribuye el espacio entre los elementos */
+        }
 
- .banner-container {
- background: linear-gradient(to right, #2c3e50, #4ca1af); /* Degradado similar al banner */
- color: #ffffff;
- padding: 20px;
- text-align: left;
- height: 119px; /* Altura similar al banner */
- display: flex;
- align-items: center;
- justify-content: space-between; /* Espacio entre logo y texto */
- }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
 
+        .text-content {
+            margin-left: 20px;
+        }
 
- .logo {
- font-size: 1.5em;
- font-weight: bold;
- }
+        .main-title {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
 
+        .secondary-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
- .text-content {
- margin-left: 20px;
- }
+        .subtitle {
+            font-size: 0.9em;
+            color: #cccccc;
+        }
 
+        /* --- Contenedor Principal de la Galería --- */
+        .nft-gallery {
+            padding: 40px 20px; /* Más espacio vertical */
+            display: flex;         /* Activa Flexbox para alinear los ítems */
+            flex-wrap: wrap;       /* Permite que los ítems bajen a la siguiente línea si no hay espacio */
+            justify-content: center; /* Centra los ítems horizontalmente */
+            gap: 25px;             /* Crea un espacio uniforme entre los ítems */
+        }
 
- .main-title {
- font-size: 1.2em;
- margin-bottom: 5px;
- }
+        .gallery-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            width: 100%;             /* Asegura que el título ocupe todo el ancho */
+            text-align: center;
+        }
 
+        /* --- Tarjeta Individual de NFT --- */
+        .nft-item {
+            width: 190px;
+            border: 1px solid #333;
+            padding: 15px;
+            background-color: #222;
+            border-radius: 8px; /* Bordes un poco más redondeados */
+            
+            /* Flexbox para alinear el contenido interno verticalmente */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
- .secondary-title {
- font-size: 1.8em;
- font-weight: bold;
- margin-bottom: 5px;
- }
+            /* Transición para efecto hover */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .nft-item:hover {
+            transform: translateY(-5px); /* Levanta la tarjeta 5px */
+            box-shadow: 0 8px 20px rgba(76, 161, 175, 0.2); /* Sombra con el color del banner */
+        }
 
- .subtitle {
- font-size: 0.9em;
- color: #cccccc;
- }
+        .nft-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px; /* Redondea también las esquinas de la imagen */
+            margin-bottom: 15px;
+        }
+        
+        .nft-item p {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            /* Se elimina la altura fija para dar flexibilidad */
+        }
 
+        /* --- Botón de la Tarjeta --- */
+        .view-button {
+            background-color: #4ca1af;
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
 
- .nft-gallery {
- padding: 20px;
- text-align: center;
- }
+        .view-button:hover {
+            background-color: #2c3e50;
+        }
 
-
- .gallery-title {
- font-size: 2em;
- margin-bottom: 20px;
- }
-
-
- /* Estilos básicos para la galería de NFTs (puedes expandir esto) */
- .nft-item {
- display: inline-block;
- width: 180px; /* Ancho fijo para mejor alineación */
- margin: 10px;
- border: 1px solid #333;
- padding: 15px;
- background-color: #222;
- border-radius: 5px;
- vertical-align: top; /* Alinea los items desde la parte superior */
- text-align: center;
- }
-
-
- .nft-item img {
- max-width: 150px;
- height: auto;
- display: block;
- margin-bottom: 15px;
- margin-left: auto;
- margin-right: auto;
- }
- 
- .nft-item p {
-    font-size: 0.9em;
-    height: 40px; /* Altura fija para el texto */
- }
-
-
- /* Estilos para el nuevo botón */
- .view-button {
-    background-color: #4ca1af; /* Color del degradado del banner */
-    color: #ffffff;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    margin-top: 10px;
-    text-decoration: none; /* Quita el subrayado del enlace */
-    display: inline-block;
-    transition: background-color 0.3s; /* Transición suave para el hover */
- }
-
- .view-button:hover {
-    background-color: #2c3e50; /* Color oscuro del degradado para el hover */
- }
-
- </style>
+    </style>
 </head>
 <body>
 
+    <div class="banner-container">
+        <div class="logo">IOA</div>
+        <div class="text-content">
+            <div class="main-title">Exclusive NFT Gallery</div>
+            <div class="secondary-title">MANG369</div>
+            <div class="subtitle">Discover Unique Digital Art</div>
+        </div>
+        <div style="width: 361px;"></div> 
+    </div>
 
- <div class="banner-container">
- <div class="logo">IOA</div>
- <div class="text-content">
- <div class="main-title">Exclusive NFT Gallery</div>
- <div class="secondary-title">MANG369</div>
- <div class="subtitle">Discover Unique Digital Art</div>
- </div>
- <div style="width: 361px;"></div> </div>
+    <div class="nft-gallery">
+        <h2 class="gallery-title">Explora la Galería Exclusiva de NFTs</h2>
 
+        <div class="nft-item">
+            <img src="placeholder-nft-1.png" alt="Ilustración del Coleccionable NFT 1">
+            <p>Coleccionable #1</p>
+            <a href="https://tonscan.com/nft/EQB8BwZiWtgetBihfmEYfomc2iRvOHbXUcLPh461gF9I_U8f" target="_blank" rel="noopener noreferrer" class="view-button">
+                Ver en Explorador
+            </a>
+        </div>
 
- <div class="nft-gallery">
- <h2 class="gallery-title">Explora la Galería Exclusiva de NFTs</h2>
- 
- <div class="nft-item">
- <img src="placeholder-nft.png" alt="NFT 1">
- <p>Coleccionable #1</p>
- <a href="https://tonscan.com/nft/EQB8BwZiWtgetBihfmEYfomc2iRvOHbXUcLPh461gF9I_U8f" target="_blank" rel="noopener noreferrer" class="view-button">
- Ver en Explorador
- </a>
- </div>
- 
- <div class="nft-item">
- <img src="placeholder-nft.png" alt="NFT 2">
- <p>Coleccionable #2</p>
- <a href="https://tonscan.com/nft/EQBALaeVmVAQsATVL9GvCD9lXnKBAELySR9_Bgv9rOqwatff" target="_blank" rel="noopener noreferrer" class="view-button">
- Ver en Explorador
- </a>
- </div>
- 
- <div class="nft-item">
- <img src="placeholder-nft.png" alt="NFT 3">
- <p>Coleccionable #3</p>
- <a href="https://tonscan.com/nft/EQCVmMhfs5W5pE5EPJyPWQrWYjWM1qALAmAFExZkB21z_e_F" target="_blank" rel="noopener noreferrer" class="view-button">
- Ver en Explorador
- </a>
- </div>
+        <div class="nft-item">
+            <img src="placeholder-nft-2.png" alt="Ilustración del Coleccionable NFT 2">
+            <p>Coleccionable #2</p>
+            <a href="https://tonscan.com/nft/EQBALaeVmVAQsATVL9GvCD9lXnKBAELySR9_Bgv9rOqwatff" target="_blank" rel="noopener noreferrer" class="view-button">
+                Ver en Explorador
+            </a>
+        </div>
 
-</div>
-
+        <div class="nft-item">
+            <img src="placeholder-nft-3.png" alt="Ilustración del Coleccionable NFT 3">
+            <p>Coleccionable #3</p>
+            <a href="https://tonscan.com/nft/EQCVmMhfs5W5pE5EPJyPWQrWYjWM1qALAmAFExZkB21z_e_F" target="_blank" rel="noopener noreferrer" class="view-button">
+                Ver en Explorador
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
